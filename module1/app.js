@@ -10,33 +10,27 @@
         $scope.menu = "";
         $scope.message = "";
 
-        function initMessage() {
-            $scope.message = checkIfTooMuch($scope.menu);
-            return $scope.message;
-        }
-
-        function checkIfTooMuch(str) {
-            console.log(str);
-            if (str.length) {
-                if (str.split(',').length > 3) {
+        $scope.checkIfTooMuch = function() {
+            if ($scope.menu.length) {
+                if ($scope.menu.split(',').length > 3) {
                     let totalItems = [];
-                    for (let i = 0; i < str.split(',').length; i++) {
-                        if (str.split(',')[i].length) {
-                            totalItems.push(str.split(',')[i]);
+                    for (let i = 0; i < $scope.menu.split(',').length; i++) {
+                        if ($scope.menu.split(',')[i].length) {
+                            totalItems.push($scope.menu.split(',')[i]);
                         }
                     }
                     if (totalItems.length > 3) {
-                        return "Too much!";
+                        $scope.message = "Too much!";
                     } else {
-                        return "Enjoy!";
+                        $scope.message = "Enjoy!";
                     }
                 } else {
-                    return "Enjoy!";
+                    $scope.message = "Enjoy!";
                 }
             } else {
-                return "Please enter the data first";
+                $scope.message = "Please enter the data first";
             }
         }
     }
-})
+})();
 
