@@ -11,7 +11,7 @@
         $scope.message = "";
         $scope.myStyleDefault = {};
         const redStyle = { "color": "red", "border-color": "red", "padding": "4px", "border-style": "solid" };
-        const greenStyle = { "color": "green", "border-color": "green", "padding": "4px", "border-style": "green"} 
+        const greenStyle = { "color": "green", "border-color": "green", "padding": "4px", "border-style": "solid"} 
 
         $scope.checkIfTooMuch = function() {
             if ($scope.menu.length) {
