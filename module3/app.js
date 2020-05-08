@@ -15,11 +15,12 @@
         ctrl.ifFoundFlag = true;
         
         ctrl.getMatchedMenuItems = function (searchTerm) {
+            ctrl.ifFoundFlag = true;
             const prom = MenuSearchService.getMatchedMenuItems(searchTerm);
             prom.then(function (response) {
                 ctrl.found = response;
                 ctrl.searchTerm = "";
-                if (!ctrl.found.length) { ctrl.ifFoundFlag = false; } else { ctrl.ifFoundFlag = true; }
+                if (!ctrl.found.length) { ctrl.ifFoundFlag = false; }
             })
         }
 
