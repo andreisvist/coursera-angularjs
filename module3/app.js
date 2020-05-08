@@ -19,7 +19,7 @@
             prom.then(function (response) {
                 ctrl.found = response;
                 ctrl.searchTerm = "";
-                if (!ctrl.found.length) { ctrl.ifFoundFlag = false; } else { ctrl.ifFoundFlag = true }
+                if (!ctrl.found.length) { ctrl.ifFoundFlag = false; } else { ctrl.ifFoundFlag = true; }
             })
         }
 
