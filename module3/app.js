@@ -15,7 +15,7 @@
         ctrl.ifFoundFlag = true;
         
         ctrl.getMatchedMenuItems = function (searchTerm) {
-            ctrl.searchTerm = ctrl.searchTerm.trim();
+            ctrl.found = [];
             ctrl.ifFoundFlag = true;
             if (ctrl.searchTerm.length) {
                 const prom = MenuSearchService.getMatchedMenuItems(searchTerm);
@@ -61,21 +61,21 @@
        }
     }
 
-    function FoundItemsDirectiveLink(scope, element) {
+    function FoundItemsDirectiveLink(scope, element, attrs, controller) {
 
         scope.$watch('ctrl.itemsFound()', function (newVal) {
-            if (newVal === true) { displayLoader(); }
-            else { hideLoader(); }
+            if (newVal === true) { displayResults(); }
+            else { hideResults(); }
         })
 
-        function displayLoader() {
-            const loaderDiv = element.find("div");
-            loaderDiv.css('display', 'block');
+        function displayResults() {
+            const myDiv = element.find("div");
+            myDiv.css('display', 'block');
         }
 
-        function hideLoader() {
-            const loaderDiv = element.find("div");
-            loaderDiv.css('display', 'none');
+        function hideResults() {
+            const myDiv = element.find("div");
+            myDiv.css('display', 'none');
         }
 
     }
