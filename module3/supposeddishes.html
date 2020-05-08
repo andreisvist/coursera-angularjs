@@ -1,0 +1,24 @@
+<div class="results">
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Dish name</th>
+            <th>Dish description</th>
+            <th>Small portion name</th>
+            <th>Price</th>
+            <th>Large portion name</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="item in ctrl.foundItems">
+            <td>{{item.short_name}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.small_portion_name}}</td>
+            <td>{{item.price_small}}</td>
+            <td>{{item.large_portion_name}}</td>
+            <td>{{item.price_large}}</td>
+            <td><button ng-click="ctrl.onRemove({itemIndex: $index})">Don't want this one!</button></td>
+        </tr>
+    </table>
+</div>
