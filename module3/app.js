@@ -25,7 +25,6 @@
                 })
             } else {
                 ctrl.ifFoundFlag = false;
-                ctrl.searchTerm = "";
             };
             ctrl.searchTerm = "";
         }
