@@ -15,6 +15,7 @@
         ctrl.ifFoundFlag = true;
         
         ctrl.getMatchedMenuItems = function (searchTerm) {
+            ctrl.searchTerm = ctrl.searchTerm.trim();
             ctrl.ifFoundFlag = true;
             if (ctrl.searchTerm.length) {
                 const prom = MenuSearchService.getMatchedMenuItems(searchTerm);
