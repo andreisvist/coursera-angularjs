@@ -16,12 +16,17 @@
         
         ctrl.getMatchedMenuItems = function (searchTerm) {
             ctrl.ifFoundFlag = true;
-            const prom = MenuSearchService.getMatchedMenuItems(searchTerm);
-            prom.then(function (response) {
-                ctrl.found = response;
+            if (ctrl.searchTerm.length) {
+                const prom = MenuSearchService.getMatchedMenuItems(searchTerm);
+                prom.then(function (response) {
+                    ctrl.found = response;
+                    if (!ctrl.found.length) { ctrl.ifFoundFlag = false; }
+                })
+            } else {
+                ctrl.ifFoundFlag = false;
                 ctrl.searchTerm = "";
-                if (!ctrl.found.length) { ctrl.ifFoundFlag = false; }
-            })
+            };
+            ctrl.searchTerm = "";
         }
 
         ctrl.onRemove = function (itemIndex) {
