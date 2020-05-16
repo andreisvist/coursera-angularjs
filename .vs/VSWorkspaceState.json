@@ -1,10 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\module1",
-    "\\module2",
-    "\\module3"
+    "\\module3",
+    "\\module3\\styles",
+    "\\module4",
+    "\\module4\\src",
+    "\\module4\\src\\templates"
   ],
-  "SelectedNode": "\\module3\\app3.js",
+  "SelectedNode": "\\module4\\src\\categories.component.js",
   "PreviewInSolutionExplorer": false
 }
