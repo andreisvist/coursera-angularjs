@@ -15,7 +15,7 @@
                 method: 'GET', url: AllCategoriesPath
             }).then(function (res) {
                 return res;
-            });
+            })
         }
 
         service.getItemsForCategory = function (categoryShortName) {
@@ -23,7 +23,7 @@
                 method: 'GET', url: (CategoryItemsPath + categoryShortName)
             }).then(function (res) {
                 return res;
-            });
+            })
         }
     }
 })();

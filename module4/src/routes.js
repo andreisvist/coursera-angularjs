@@ -25,13 +25,26 @@
                 templateUrl: "src/templates/categories.template.html",
                 controller: 'AllCategoriesController as categoriesList',
                 resolve: {
-                    categories: ['MenuMenuDataService', function (MenuDataService) {
+                    categories: ['MenuDataService', function (MenuDataService) {
                         return MenuDataService.getAllCategories();
                     }]
                 }
             })
 
-            
+            .state('itemsList', {
+                url: '/category-items/{categoryShortName}',
+                templateUrl: 'src/templates/category_items.template.html',
+                controller: 'ItemsListController as itemsList',
+                resolve: {
+                    items: ['$stateParams', 'MenuDataService',
+                        function ($stateParams, MenuDataService) {
+                            return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
+                        }]
+                },
+                params: {
+                    categoryShortName: null
+                }
+            })
 
     }
 })();
