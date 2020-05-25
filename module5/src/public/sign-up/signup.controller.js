@@ -4,8 +4,8 @@
     angular.module('public')
         .controller('SignUpController', SignUpController);
 
-    SignUpController.$inject = ['SignUpService', 'allItems', '$scope'];
-    function SignUpController(SignUpService, allItems, $scope) {
+    SignUpController.$inject = ['SignUpService', 'allItems'];
+    function SignUpController(SignUpService, allItems) {
         const ctrl = this;
         ctrl.firstName = '';
         ctrl.lastName = '';
