@@ -31,7 +31,7 @@
                 <label>Favorite dish code: </label>
                 <input type="text" placeholder="e.g., LA" ng-model="signUpCtrl.dishCode" class="form-control" id="favDish" name="favDish" ng-change="signUpCtrl.checkIfIn(personForm.favDish)" required>
                 <span style="color: ghostwhite" ng-show="personForm.favDish.$invalid && personForm.favDish.$touched"><strong>Please mention your favorite dish code!</strong></span>
-                <span style="color: ghostwhite" ng-show="personForm.favDish.$error.matched"><strong>The code you have provided is not valid!</strong></span>
+                <span style="color: ghostwhite" ng-show="personForm.favDish.$error.matched"><strong>No such menu code exists!</strong></span>
             </div>
             <button type="submit" class="btn btn-primary" ng-click="signUpCtrl.onClick()" ng-disabled="personForm.$invalid || personForm.$pristine">Get my newsletter!</button>
         </form>
