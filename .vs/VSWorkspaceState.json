@@ -1,11 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\module3",
-    "\\module3\\styles",
+    "\\module2",
     "\\module4",
-    "\\module4\\src"
+    "\\module5",
+    "\\module5\\src",
+    "\\module5\\src\\public",
+    "\\module5\\src\\public\\home",
+    "\\module5\\src\\public\\menu-category",
+    "\\module5\\src\\public\\menu-items",
+    "\\module5\\src\\public\\my-info"
   ],
-  "SelectedNode": "\\module4\\index.html",
+  "SelectedNode": "\\module5\\src\\public\\sign-up\\signup.controller.js",
   "PreviewInSolutionExplorer": false
 }

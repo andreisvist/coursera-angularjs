@@ -1,42 +1,43 @@
-<div class="container" ng-controller="SignUpController as ctrl">
+<div class="container">
     <h2 id="sign-up-title" class="text-center">Sign up for our newsletter right now!</h2>
     <div class="text-center">
         The newsletter will update you with our current discounts, bonuses, and special menu!
     </div>
 
     <div>
-        <form name="personForm" novalidate>
+        <form name="personForm" id="personForm" novalidate ng-model="personForm">
             <div class="form-group">
                 <label>First name: </label>
-                <input type="text" placeholder="e.g., Bruce" ng-model="ctrl.firstName" class="form-control" id="firstName" name="firstName" required>
+                <input type="text" placeholder="e.g., Bruce" ng-model="signUpCtrl.firstName" class="form-control" id="firstName" name="firstName" required>
                 <span style="color: ghostwhite" ng-show="personForm.firstName.$invalid && personForm.firstName.$touched"><strong>The first name is required!</strong></span>
             </div>
             <div class="form-group">
                 <label>Last name: </label>
-                <input type="text" placeholder="e.g., Wayne" ng-model="ctrl.lastName" class="form-control" id="lastName" name="lastName" required>
+                <input type="text" placeholder="e.g., Wayne" ng-model="signUpCtrl.lastName" class="form-control" id="lastName" name="lastName" required>
                 <span style="color: ghostwhite" ng-show="personForm.lastName.$invalid && personForm.lastName.$touched"><strong>The last name is required!</strong></span>
             </div>
             <div class="form-group">
                 <label>Email: </label>
-                <input type="email" placeholder="bruce_wayne@batman.com" ng-model="ctrl.email" class="form-control" id="email"
+                <input type="email" placeholder="bruce_wayne@batman.com" ng-model="signUpCtrl.email" class="form-control" id="email"
                        required name="email">
                 <span style="color: ghostwhite" ng-show="personForm.email.$invalid && personForm.email.$touched"><strong>Please enter the valid email!</strong>Please enter the valid email!</span>
             </div>
             <div class="form-group">
                 <label>Phone number (optional): </label>
-                <input type="text" placeholder="123456789" ng-model="ctrl.phone" class="form-control" id="phone" name="phone" ng-pattern="/^[0-9]*$/">
+                <input type="text" placeholder="123456789" ng-model="signUpCtrl.phone" class="form-control" id="phone" name="phone" ng-pattern="/^[0-9]*$/">
                 <span style="color: ghostwhite" ng-show="personForm.phone.$invalid && personForm.phone.$touched"><strong>Please enter the valid phone number (no signs like plus or hyphen)!</strong></span>
             </div>
             <div class="form-group">
                 <label>Favorite dish code: </label>
-                <input type="text" placeholder="e.g., LA" ng-model="ctrl.dishCode" class="form-control" id="favDish" name="favDish" required>
+                <input type="text" placeholder="e.g., LA" ng-model="signUpCtrl.dishCode" class="form-control" id="favDish" name="favDish" ng-change="signUpCtrl.checkIfIn(personForm.favDish)" required>
                 <span style="color: ghostwhite" ng-show="personForm.favDish.$invalid && personForm.favDish.$touched"><strong>Please mention your favorite dish code!</strong></span>
+                <span style="color: ghostwhite" ng-show="personForm.favDish.$error.matched"><strong>The code you have provided is not valid!</strong></span>
             </div>
-            <button type="submit" class="btn btn-primary" ng-click="ctrl.onClick()" ng-disabled="personForm.$invalid || personForm.$pristine">Get my newsletter!</button>
+            <button type="submit" class="btn btn-primary" ng-click="signUpCtrl.onClick()" ng-disabled="personForm.$invalid || personForm.$pristine">Get my newsletter!</button>
         </form>
     </div>
-    <div ng-show="(ctrl.doneFlag === true)">
-        <h2>{{ctrl.savedMessage}}</h2>
+    <div ng-show="(signUpCtrl.doneFlag === true)">
+        <h2>{{signUpCtrl.savedMessage}}</h2>
     </div>
     
 </div>
