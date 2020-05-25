@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 class="text-center">My Profile</h1>
+    <div>
+        <div ng-show="myInfoCtrl.registeredPeople.length">
+            <div>
+                <div style="margin-bottom: 2vw">
+                    <div class="row">
+                        <span><strong>My name:</strong></span>
+                        <span>{{myInfoCtrl.user.firstName}} {{myInfoCtrl.user.lastName}}</span>
+                    </div>
+                    <div class="row">
+                        <span><strong>Email:</strong></span>
+                        <span>{{myInfoCtrl.user.email}}</span>
+                    </div>
+                    <div class="row">
+                        <span><strong>Contact number:</strong></span>
+                        <span>{{myInfoCtrl.user.phone}}</span>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h2 class="text-center">Favorite dish: </h2>
+                    </div>
+                    <menu-item menu-item="myInfoCtrl.favItem"></menu-item>
+                </div>
+            </div>
+        </div>
+        <div ng-hide="myInfoCtrl.registeredPeople.length">
+            <div>
+                <div><span>We see that you have not signed up for our newsletter :(</span></div>
+                <div><a ui-sref="public.signup">You can do that here!</a></div>
+            </div>
+        </div>
+    </div>
+</div>

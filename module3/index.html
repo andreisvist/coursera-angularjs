@@ -22,7 +22,7 @@
 
     <!-- found-items should be implemented as a component -->
     <div class="row col-12">
-        <found-items found-items="ctrl.found" on-remove="ctrl.onRemove(itemIndex)" ng-ig="ctrl.found.length"></found-items>
+        <found-items found-items="ctrl.found" on-remove="ctrl.onRemove(itemIndex)" ng-if="ctrl.found.length"></found-items>
         <div style="margin-left: 3vw; font-size: 16pt" ng-if="ctrl.ifFoundFlag === false">Nothing found.</div>
     </div>
   </div>
